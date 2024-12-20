@@ -1,0 +1,29 @@
+<div class="info-modal__overlay" (click)="onClose()">
+  <div class="info-modal__content" (click)="$event.stopPropagation()">
+    <span class="info-modal__close-btn" (click)="onClose()">&times;</span>
+
+    <h2>About the Patient Management Application</h2>
+
+    <div class="info-modal__details">
+      <p>
+        <strong>Patient Management</strong> is a platform designed for healthcare professionals.
+        It allows for efficient patient tracking through the following features:
+      </p>
+
+      <ul>
+        <li><strong>Patient Management:</strong> Track medical information, diagnoses, and treatment history.</li>
+        <li><strong>Appointment Scheduling:</strong> Organize appointments and schedule medical visits.</li>
+        <li><strong>Medical Follow-up:</strong> Monitor treatment progress and patients' health status.</li>
+        <li><strong>Secure Authentication:</strong> Ensure secure access to sensitive information.</li>
+        <li><strong>Reports and Statistics:</strong> Generate detailed medical reports for comprehensive follow-up.</li>
+      </ul>
+
+      <p>
+        This application aims to streamline the management of healthcare services by centralizing all necessary information
+        and optimizing healthcare professionals' time.
+      </p>
+    </div>
+
+    <button class="info-modal__ok-btn" (click)="onClose()">OK</button>
+  </div>
+</div>

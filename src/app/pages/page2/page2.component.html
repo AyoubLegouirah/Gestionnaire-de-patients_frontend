@@ -1,0 +1,44 @@
+<div class="staff-content">
+  <div class="disposition" >
+    <div class="staff-header">
+      <img class="staff-icon" src="logo/staff.png" alt="Staff Icon">
+      <h2>{{ totalStaff }}</h2>
+      <p>Total Staff</p>
+    </div>
+    <div class="button-container">
+      <button class="add-patient-btn" (click)="openModal(addStaffModal)">
+        <i class="add-patient-btn__icon">+</i>
+        Add Staff
+      </button>
+    </div>
+  </div>
+
+  <div class="staff-container">
+    <div class="staff-card" *ngFor="let staff of professionals">
+      <div class="staff-icon">
+        <img src="logo/user-logo.png" alt="User Icon" />
+      </div>
+      <div class="staff-info">
+        <h3>{{ staff.firstName }}</h3>
+          <h3>{{ staff.lastName }}</h3>
+          <p>{{  staff.role }}</p>
+      </div>
+      <button class="delete-btn" (click)="confirmDelete(staff)">Delete Staff</button>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div *ngIf="selectedStaff" class="confirmation-modal">
+    <div class="modal-content">
+      <h3>Are you sure you want to delete {{ selectedStaff.name }}?</h3>
+      <div class="modal-actions">
+        <button class="confirm-btn" (click)="deleteStaff(selectedStaff.id)">Yes</button>
+        <button class="cancel-btn" (click)="cancelDelete()">No</button>
+      </div>
+    </div>
+  </div>
+
+
+<app-add-staff-modal
+  #addStaffModal (staffAdded)="loadProfessionals()">
+</app-add-staff-modal>

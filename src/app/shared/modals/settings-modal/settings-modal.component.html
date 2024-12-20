@@ -1,0 +1,22 @@
+<div class="settings-modal__overlay" (click)="onClose()">
+  <div class="settings-modal__content" (click)="$event.stopPropagation()">
+    <span class="settings-modal__close-btn" (click)="onClose()">&times;</span>
+
+    <h2>Application Settings</h2>
+
+    <div class="settings-modal__details">
+      <p>
+        Manage the settings of your Patient Management application and personalize your user experience:
+      </p>
+
+      <ul>
+        <li><strong>User Profile:</strong> Update your personal information and preferences.</li>
+        <li><strong>Notifications:</strong> Enable or disable important notifications.</li>
+        <li><strong>Security:</strong> Change your password and configure authentication.</li>
+        <li><strong>Language and Region:</strong> Modify your locale settings and the app's language.</li>
+      </ul>
+
+      <button class="settings-modal__logout-btn" (click)="onLogout()">Log Out</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<!-- Structure conditionnelle -->
+@if(localStorage.getItem('professionelToken')){
+<div *ngIf="!isLoginPage; else loginTemplate" class="app-container">
+  <!-- Sidebar -->
+  <app-sidebar (adminModalOpened)="openAdminModal()"></app-sidebar>
+
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <app-header (adminSettingsOpened)="openSettingsModal()"></app-header>
+    </div>
+
+    <!-- Page content -->
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <!-- Admin Modal -->
+  <app-admin-modal *ngIf="isModalOpen" (closeModal)="closeAdminModal()"></app-admin-modal>
+  <app-settings-modal
+    *ngIf="isSettingsModalOpen"
+    (closeModal)="closeSettingsModal()"
+    (logout)="logout()">
+  </app-settings-modal>
+</div>
+
+<!-- Template pour la page login -->
+<ng-template #loginTemplate>
+  <router-outlet></router-outlet>
+</ng-template>
+} @else {
+  <app-login></app-login>
+}

@@ -1,0 +1,194 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: "FONT NAME", Helvetica, sans-serif;
+  align-items: center;
+  padding: 0rem 1rem;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Bordure uniquement en bas */
+  //position: fixed;
+  //top: 0;
+  //left: 250px;
+  right: 0;
+  padding: 10px;
+}
+
+.header__status {
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-left: 10px;
+    font-weight: normal;
+  }
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .header__search-input {
+    width: 300px; /* Ajustez cette valeur pour augmenter la largeur */
+    padding: 10px;
+    font-size: 16px; /* Ajustez la taille du texte si nécessaire */
+    border: 1px solid #ccc; /* Ajoutez un bord si nécessaire */
+    border-radius: 9px; /* Optionnel : pour des coins arrondis */
+    background-color: #f2f8fe;
+  }
+
+
+  .header__search-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    img {
+      margin-left: 10px;
+      width: 38px;
+      height: 38px;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.1); /* Légère agrandissement lors du survol */
+    }
+  }
+
+  /* Style de la Barre de Recherche */
+  .search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 87%;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 100;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  /* Animation d'Apparition */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .search-results ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .search-result-item {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease, transform 0.1s ease;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background: #f0f4f8;
+      transform: scale(1.02);
+      cursor: pointer;
+    }
+
+    .patient-name {
+      font-weight: bold;
+      color: #333;
+      font-size: 16px;
+    }
+
+    .patient-email {
+      font-size: 14px;
+      color: #6c757d;
+      text-align: right;
+    }
+  }
+
+}
+
+.header__information {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    img {
+      width: 38px;
+      height: 38px;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.header__separator {
+  width: 1px;
+  height: 40px;
+  background-color: #eaebee;
+  margin: 0 10px;
+}
+
+.header__user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .header__user-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+    }
+  }
+
+  .header__user-information {
+    display: flex;
+    flex-direction: column; /* Assure que les éléments sont empilés verticalement */
+    gap: 0px; /* Réduit l'espace entre les h3 et h4 */
+  }
+
+  h3, h4 {
+    margin: 0; /* Enlève les marges par défaut */
+    color: #333;
+    font-weight: normal;
+  }
+}
+
+

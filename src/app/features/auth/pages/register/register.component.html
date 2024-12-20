@@ -1,0 +1,107 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <!-- Prénom -->
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input
+      id="firstName"
+      type="text"
+      formControlName="firstName"
+      class="form-control"
+      placeholder="Enter your first name"
+      required
+    />
+  </div>
+
+  <!-- Nom de famille -->
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input
+      id="lastName"
+      type="text"
+      formControlName="lastName"
+      class="form-control"
+      placeholder="Enter your last name"
+      required
+    />
+  </div>
+
+  <!-- Email -->
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      class="form-control"
+      placeholder="Enter your email"
+      required
+    />
+  </div>
+
+  <!-- Numéro de téléphone -->
+  <div class="form-group">
+    <label for="phoneNumber">Phone Number</label>
+    <input
+      id="phoneNumber"
+      type="tel"
+      formControlName="phoneNumber"
+      class="form-control"
+      placeholder="Enter your phone number"
+      required
+    />
+  </div>
+
+  <!-- Numéro de licence -->
+  <div class="form-group">
+    <label for="licenseNumber">License Number</label>
+    <input
+      id="licenseNumber"
+      type="text"
+      formControlName="licenseNumber"
+      class="form-control"
+      placeholder="Enter your license number"
+      required
+    />
+  </div>
+
+  <!-- Spécialisation -->
+  <div class="form-group">
+    <label for="specialization">Specialization</label>
+    <input
+      id="specialization"
+      type="text"
+      formControlName="specialization"
+      class="form-control"
+      placeholder="Enter your specialization"
+      required
+    />
+  </div>
+
+  <!-- Dropdown pour le rôle -->
+  <div class="form-group">
+    <label for="role">Choisissez un rôle :</label>
+    <select id="role" formControlName="role" class="form-control">
+      <option value="ADMINISTRATEUR">ADMINISTRATEUR</option>
+      <option value="PERSONNEL_MEDICAL">PERSONNEL MÉDICAL</option>
+      <option value="PERSONNEL_ADMINISTRATIF">PERSONNEL ADMINISTRATIF</option>
+    </select>
+  </div>
+
+  <!-- Mot de passe -->
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      id="password"
+      type="password"
+      formControlName="password"
+      class="form-control"
+      placeholder="Enter your password"
+      required
+    />
+  </div>
+
+  <!-- Bouton Soumission -->
+  <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
+    Create Account
+  </button>
+</form>
